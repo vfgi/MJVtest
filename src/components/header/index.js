@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import { Container } from './style'
+import { Link } from 'react-router-dom'
 
 class Header extends Component {
   render() {
     return (
       <Container>
         <div className="logo">
-          <i class="fas fa-store"> BuyIt</i>
+          <Link to="/">
+            <i class="fas fa-store"> BuyIt</i>
+          </Link>
         </div>
         <div className="searchBar">
           <input placeholder="O que você está buscando?" />

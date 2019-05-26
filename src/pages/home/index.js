@@ -26,7 +26,7 @@ class Home extends Component {
 
   loadData() {
     axios
-      .get(`http://my-json-server.typicode.com/vfgi/servermjv/db`)
+      .get(`https://my-json-server.typicode.com/vfgi/servermjv/db`)
       .then(response => {
         this.setState({
           games: response.data.games,
