@@ -8,6 +8,10 @@ export const Container = styled.div`
   &:hover {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
   }
+  @media (max-width: 600px) {
+        width: 45%;
+        margin-left: 3%;
+      }
   .foto {
     width: 100%;
     & img {

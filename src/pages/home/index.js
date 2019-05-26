@@ -50,66 +50,112 @@ class Home extends Component {
 
     return (
       <Container>
-        <div className="top">
-          <div className="banner">
-            <Link to="product/Smartphone/1">
-              <img src="https://images-shoptime.b2w.io/spacey/2019/03/08/s10e.png" alt="" />
-            </Link>
+        {window.innerWidth > 768 ? (
+          <div className="top">
+            <div className="banner">
+              <Link to="product/Smartphone/1">
+                <img src="https://images-shoptime.b2w.io/spacey/2019/03/08/s10e.png" alt="" />
+              </Link>
+            </div>
+            <div className="head">
+              <Carousel />
+            </div>
+            <div className="banner">
+              <img
+                src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/BTP_BTPX_1690_BANNER_mob_768x960_4.png"
+                alt=""
+              />
+            </div>
           </div>
-          <div className="head">
+        ) : (
+          <div className="top">
             <Carousel />
           </div>
-          <div className="banner">
-            <img
-              src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/BTP_BTPX_1690_BANNER_mob_768x960_4.png"
-              alt=""
-            />
-          </div>
-        </div>
+        )}
+
         <h2>Os Games que você ama estão aqui!</h2>
         <div className="cards">
-          {shuffledGames.slice(0, 5).map(games => (
-            <Card
-              img={games.foto}
-              title={games.titulo}
-              price={((games.preco * 10) / 10).toLocaleString('pt-BR', {
-                style: 'currency',
-                currency: 'BRL'
-              })}
-              token={games.id}
-              cat={games.category}
-            />
-          ))}
+          {window.innerWidth > 850
+            ? shuffledGames.slice(0, 5).map(games => (
+                <Card
+                  img={games.foto}
+                  title={games.titulo}
+                  price={((games.preco * 10) / 10).toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL'
+                  })}
+                  token={games.id}
+                  cat={games.category}
+                />
+              ))
+            : shuffledGames.slice(0, 2).map(games => (
+                <Card
+                  img={games.foto}
+                  title={games.titulo}
+                  price={((games.preco * 10) / 10).toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL'
+                  })}
+                  token={games.id}
+                  cat={games.category}
+                />
+              ))}
         </div>
         <h2>Os Melhores Smartphones no melhor preço!</h2>
         <div className="cards">
-          {shuffledPhones.slice(0, 5).map(phone => (
-            <Card
-              img={phone.foto}
-              title={phone.titulo}
-              price={((phone.preco * 10) / 10).toLocaleString('pt-BR', {
-                style: 'currency',
-                currency: 'BRL'
-              })}
-              token={phone.id}
-              cat={phone.category}
-            />
-          ))}
+          {window.innerWidth > 850
+            ? shuffledPhones.slice(0, 5).map(phone => (
+                <Card
+                  img={phone.foto}
+                  title={phone.titulo}
+                  price={((phone.preco * 10) / 10).toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL'
+                  })}
+                  token={phone.id}
+                  cat={phone.category}
+                />
+              ))
+            : shuffledPhones.slice(0, 2).map(phone => (
+                <Card
+                  img={phone.foto}
+                  title={phone.titulo}
+                  price={((phone.preco * 10) / 10).toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL'
+                  })}
+                  token={phone.id}
+                  cat={phone.category}
+                />
+              ))}
         </div>
         <h2>Só aqui você encontra o melhor preço em linha branca</h2>
         <div className="cards">
-          {shuffledEletro.slice(0, 5).map(eletro => (
-            <Card
-              img={eletro.foto}
-              title={eletro.titulo}
-              price={((eletro.preco * 10) / 10).toLocaleString('pt-BR', {
-                style: 'currency',
-                currency: 'BRL'
-              })}
-              token={eletro.id}
-              cat={eletro.category}
-            />
-          ))}
+          {window.innerWidth > 850
+            ? shuffledEletro.slice(0, 5).map(eletro => (
+                <Card
+                  img={eletro.foto}
+                  title={eletro.titulo}
+                  price={((eletro.preco * 10) / 10).toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL'
+                  })}
+                  token={eletro.id}
+                  cat={eletro.category}
+                />
+              ))
+            : shuffledEletro.slice(0, 2).map(eletro => (
+                <Card
+                  img={eletro.foto}
+                  title={eletro.titulo}
+                  price={((eletro.preco * 10) / 10).toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL'
+                  })}
+                  token={eletro.id}
+                  cat={eletro.category}
+                />
+              ))}
         </div>
       </Container>
     )

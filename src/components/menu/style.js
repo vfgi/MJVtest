@@ -11,9 +11,13 @@ export const Container = styled.div`
   z-index: 989;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
   color: #000;
+  @media(max-width: 600px){
+    flex: 0 0 5%;
+    margin-top: 8%;
+  }
   .menu {
     display: flex;
-    width: 25%;
+    width: 40%;
     padding: 10px 0px 10px 20px;
     & i {
       color: #000;

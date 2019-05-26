@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Container } from './style'
 import axios from 'axios'
 
+
 class Home extends Component {
   state = {
     data: []

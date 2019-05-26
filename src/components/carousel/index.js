@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import history from '../../history'
+
 
 class Carousel extends Component {
+  productRedirect(cat, subCat) {
+    history.push(`/${cat}/${subCat}`)    
+  }
   render() {
     return (
       <div class="container">
@@ -17,7 +22,11 @@ class Carousel extends Component {
                 <img
                   src="https://blog.jonygames.com.br/wp-content/uploads/2017/07/Banner-God-Of-War-PS4-Jony-Games.jpg"
                   alt=""
-                  style={{ margin: 'auto', width: '100%', height: '300px' }}
+                  style={
+                    window.innerWidth > 600
+                      ? { margin: 'auto', width: '100%', height: '300px' }
+                      : { margin: 'auto', width: '100%', height: '150px' }
+                  }
                 />
               </Link>
             </div>
@@ -26,7 +35,12 @@ class Carousel extends Component {
               <img
                 src="https://images.tcdn.com.br/img/img_prod/654759/1555706315_banner-cat-ps4.png"
                 alt=""
-                style={{ margin: 'auto', width: '100%', height: '300px' }}
+                style={
+                  window.innerWidth > 600
+                    ? { margin: 'auto', width: '100%', height: '300px' }
+                    : { margin: 'auto', width: '100%', height: '150px' }
+                }
+                onClick={() => this.productRedirect('games', 'sony')}
               />
             </div>
 
@@ -35,7 +49,11 @@ class Carousel extends Component {
                 <img
                   src="https://images-shoptime.b2w.io/spacey/2019/04/04/header-lancamento_.png"
                   alt=""
-                  style={{ margin: 'auto', width: '100%', height: '300px' }}
+                  style={
+                    window.innerWidth > 600
+                      ? { margin: 'auto', width: '100%', height: '300px' }
+                      : { margin: 'auto', width: '100%', height: '150px' }
+                  }
                 />
               </Link>
             </div>

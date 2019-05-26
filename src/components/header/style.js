@@ -27,17 +27,26 @@ export const Container = styled.div`
         font-size: 20px;
       }
       @media (max-width: 768px) {
-        font-size: 17px
+        font-size: 17px;
       }
     }
     @media (max-width: 768px) {
       padding: 5px 0px 5px 10px;
-      }
+    }
+    @media (max-width: 600px) {
+      width: 50%;
+      padding: 5px 0px 5px 10px;
+    }
   }
   .searchBar {
     display: flex;
     justify-content: center;
     width: 50%;
+    @media (max-width: 600px) {
+      display: none;
+      width: 100%;
+      height: 60%;
+    }
 
     & input {
       outline: none;
@@ -52,6 +61,7 @@ export const Container = styled.div`
         width: 90%;
         height: 60%;
       }
+
       @media (max-width: 768px) {
         width: 90%;
         height: 60%;
@@ -62,8 +72,12 @@ export const Container = styled.div`
     display: flex;
     width: 15%;
     padding: 10px 0px 10px 20px;
-    @media(max-width: 768px){
+    @media (max-width: 768px) {
       padding: 8px 0px 0px 10px;
+    }
+    @media (max-width: 600px) {
+      padding: 8px 0px 0px 20px;
+      width: 30%;
     }
     & span {
       padding: 10px 0px 10px 20px;
@@ -75,7 +89,7 @@ export const Container = styled.div`
       }
       @media (max-width: 768px) {
         padding: 3px 0px 3px 6px;
-        font-size: 10px
+        font-size: 10px;
       }
     }
     & i {
@@ -89,15 +103,18 @@ export const Container = styled.div`
         font-size: 20px;
       }
       @media (max-width: 768px) {
-        font-size: 17px
+        font-size: 17px;
       }
     }
   }
   .cart {
     padding: 10px 0px 10px 20px;
     width: 10%;
-    @media(max-width: 768px){
+    @media (max-width: 768px) {
       padding: 10px 0px 4px 15px;
+    }
+    @media (max-width: 600px) {
+      padding: 5px 10px 0px 40px;
     }
     & i {
       font-size: 36px;
@@ -110,7 +127,7 @@ export const Container = styled.div`
         font-size: 20px;
       }
       @media (max-width: 768px) {
-        font-size: 17px
+        font-size: 17px;
       }
     }
   }

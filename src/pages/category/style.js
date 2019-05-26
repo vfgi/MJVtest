@@ -1,10 +1,13 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 5%;
   justify-content: center;
   width: 100%;
   @media (max-width: 600px) {
-    margin-top: 12%;
+    margin-top: 20%;
   }
   .top {
     padding: 15px 5px 10px 5px;
@@ -13,9 +16,6 @@ export const Container = styled.div`
     & .head {
       width: 70%;
       cursor: pointer;
-      @media (max-width: 600px) {
-        height: 200px;
-      }
     }
     & .banner {
       width: 15%;
@@ -48,13 +48,11 @@ export const Container = styled.div`
   }
   .cards {
     margin: 1%;
+    width: 100%;
     display: flex;
-    flex: wrap;
+    flex-wrap: wrap;
   }
   h2 {
     margin: 1%;
-    @media (max-width: 600px) {
-      margin-left: 5%;
-    }
   }
 `

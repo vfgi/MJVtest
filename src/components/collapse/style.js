@@ -22,5 +22,18 @@ export const Container = styled.div`
         transition: 0.4s;
       }
     }
+    & .cardBody{
+      text-align: center;
+      font-size: 14px;
+      margin: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 500;
+      &:hover{
+        background-color: rgba(0,0,0,0.1);
+        transition: 0.3s;
+        border-radius: 10px;
+      }
+    }
   }
 `
