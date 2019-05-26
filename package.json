@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "reactotron-react-js": "^3.0.1",
-    "reactotron-redux": "^3.1.0",
+    "reactotron-redux": "^3.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
