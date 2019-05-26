@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class Carousel extends Component {
   render() {
@@ -12,11 +13,13 @@ class Carousel extends Component {
           </ol>
           <div class="carousel-inner">
             <div class="item active">
-              <img
-                src="https://blog.jonygames.com.br/wp-content/uploads/2017/07/Banner-God-Of-War-PS4-Jony-Games.jpg"
-                alt=""
-                style={{ margin: 'auto', width: '100%', height: '300px' }}
-              />
+              <Link to="/product/games/4">
+                <img
+                  src="https://blog.jonygames.com.br/wp-content/uploads/2017/07/Banner-God-Of-War-PS4-Jony-Games.jpg"
+                  alt=""
+                  style={{ margin: 'auto', width: '100%', height: '300px' }}
+                />
+              </Link>
             </div>
 
             <div class="item">
@@ -28,11 +31,13 @@ class Carousel extends Component {
             </div>
 
             <div class="item">
-              <img
-                src="https://images-shoptime.b2w.io/spacey/2019/04/04/header-lancamento_.png"
-                alt=""
-                style={{ margin: 'auto', width: '100%', height: '300px' }}
-              />
+              <Link to="/product/Smartphone/0">
+                <img
+                  src="https://images-shoptime.b2w.io/spacey/2019/04/04/header-lancamento_.png"
+                  alt=""
+                  style={{ margin: 'auto', width: '100%', height: '300px' }}
+                />
+              </Link>
             </div>
           </div>
           <a class="left carousel-control" href="#myCarousel" data-slide="prev">

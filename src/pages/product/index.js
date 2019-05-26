@@ -1,64 +1,39 @@
 import React, { Component } from 'react'
 import { Container } from './style'
-
-import Carousel from '../../components/carousel'
-import Card from '../../components/card'
-
-import { GameData } from '../../utils/mock/games'
-import { PhoneData } from '../../utils/mock/smartphone'
-import { EletroData } from '../../utils/mock/eletro'
+import axios from 'axios'
 
 class Home extends Component {
-  shuffle(arr) {
-    var i, j, temp
-    for (i = arr.length - 1; i > 0; i--) {
-      j = Math.floor(Math.random() * (i + 1))
-      temp = arr[i]
-      arr[i] = arr[j]
-      arr[j] = temp
-    }
-    return arr
+  state = {
+    data: []
   }
-    
+
+  loadData() {
+    let id = this.props.match.params.id
+    let cat = this.props.match.params.category
+
+    axios
+      .get(`http://my-json-server.typicode.com/vfgi/servermjv/${cat}/${id}`)
+      .then(response => {
+        this.setState({ data: response.data })
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
+
+  componentDidMount() {
+    this.loadData()
+  }
+
   render() {
-    let shuffledGames = this.shuffle(GameData)
-    let shuffledPhones = this.shuffle(PhoneData)
-    let shuffledEletro = this.shuffle(EletroData)
+    let data = this.state.data
 
     return (
       <Container>
-        <div className="top">
-          <div className="banner">
-            <img src="https://images-shoptime.b2w.io/spacey/2019/03/08/s10e.png" alt="" />
-          </div>
-          <div className="head">
-            <Carousel />
-          </div>
-          <div className="banner">
-            <img
-              src="https://img.imageboss.me/cdn/http://bimg.visie.com.br/media/BTP_BTPX_1690_BANNER_mob_768x960_4.png"
-              alt=""
-            />
-          </div>
-        </div>
-        <h2>Os Games que você ama estão aqui!</h2>
-        <div className="cards">
-          {shuffledGames.slice(0, 5).map(games => (
-            <Card img={games.foto} title={games.titulo} price={games.preco} />
-          ))}
-        </div>
-        <h2>Os Melhores Smartphones no melhor preço!</h2>
-        <div className="cards">
-          {shuffledPhones.slice(0, 5).map(phone => (
-            <Card img={phone.foto} title={phone.titulo} price={phone.preco} />
-          ))}
-        </div>
-        <h2>Só aqui você encontra o melhor preço em linha branca</h2>
-        <div className="cards">
-          {shuffledEletro.slice(0, 5).map(eletro => (
-            <Card img={eletro.foto} title={eletro.titulo} price={eletro.preco} />
-          ))}
-        </div>
+        <div className="foto"><img src={data.foto} alt={data.id}/></div>
+        <div>{data.titulo}</div>
+        <div>{((data.preco*10)/10).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</div>
+        <div>Parcele em até 12x de {(data.preco/12).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</div>
       </Container>
     )
   }
