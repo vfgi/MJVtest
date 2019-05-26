@@ -16,9 +16,7 @@
     "redux-saga": "^1.0.2",
     "styled-components": "^4.2.0",
     "react-redux": "^6.0.1",
-    "redux": "^4.0.1"
-  },
-  "devDependencies": {
+    "redux": "^4.0.1",
     "reactotron-react-js": "^3.0.1",
     "reactotron-redux": "^3.1.0"
   },
