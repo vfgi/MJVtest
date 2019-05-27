@@ -5,19 +5,11 @@ import axios from 'axios'
 import Card from '../../components/card'
 
 class Category extends Component {
-  state = {
-    itens: []
-  }
-
-  shuffleArray(array) {
-    let i = array.length - 1
-    for (; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1))
-      const temp = array[i]
-      array[i] = array[j]
-      array[j] = temp
-    }
-    return array
+  constructor(props) {
+    super(props)
+    this.state = {
+      itens: []
+    };
   }
 
   loadData() {
@@ -30,29 +22,30 @@ class Category extends Component {
         .then(response => {
           this.setState({ itens: response.data })
         })
+    } else {
+      axios
+        .get(`https://my-json-server.typicode.com/vfgi/servermjv/${cat}?subCategory=${sub}`)
+        .then(response => {
+          this.setState({ itens: response.data })
+        })
+        .catch(error => {
+          console.log(error)
+        })
     }
-    axios
-      .get(`https://my-json-server.typicode.com/vfgi/servermjv/${cat}?subCategory=${sub}`)
-      .then(response => {
-        this.setState({ itens: response.data })
-      })
-      .catch(error => {
-        console.log(error)
-      })
   }
-
-  componentDidMount() {
+  async componentDidMount() {
     this.loadData()
   }
 
-  render() {
-    let shuffleditens = this.shuffleArray(this.state.itens)
-    console.log(window.innerWidth)
+  async componentWillReceiveProps() {
+      this.loadData()
+  }
 
+  render() {
     return (
       <Container>
         <div className="cards">
-          {shuffleditens.map(itens => (
+          {this.state.itens.map(itens => (
             <Card
               img={itens.foto}
               title={itens.titulo}
