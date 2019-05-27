@@ -57,6 +57,7 @@ export const Container = styled.div`
       border-radius: 8px;
       text-align: center;
       margin-top: 2%;
+      color: #000;
       @media (max-width: 1330px) {
         width: 90%;
         height: 60%;

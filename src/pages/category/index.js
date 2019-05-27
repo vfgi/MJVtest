@@ -9,13 +9,15 @@ class Category extends Component {
     super(props)
     this.state = {
       itens: []
-    };
+    }
   }
 
-  loadData() {
-    let cat = this.props.match.params.category
-    let sub = this.props.match.params.subCategory
-    console.log(cat, sub)
+  loadData(props) {
+
+    let cat = props.match.params.category
+    let sub = props.match.params.subCategory
+    console.log(cat, sub);
+    
     if (sub === 'sony') {
       axios
         .get(`https://my-json-server.typicode.com/vfgi/servermjv/${cat}?brand=${sub}`)
@@ -33,12 +35,13 @@ class Category extends Component {
         })
     }
   }
+
   async componentDidMount() {
-    this.loadData()
+    this.loadData(this.props)
   }
 
-  async componentWillReceiveProps() {
-      this.loadData()
+  async componentWillReceiveProps(props) {
+    this.loadData(props)
   }
 
   render() {

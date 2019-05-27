@@ -11,6 +11,7 @@ const Routes = () => (
       <Route exact path="/" component={Home} />
       <Route path="/product/:category/:id" component={Product} />
       <Route path="/:category/:subCategory" component={Category}/>
+      <Route path="/:search" component={Category}/>
     </Switch>
   </Suspense>
 )

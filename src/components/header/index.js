@@ -11,9 +11,9 @@ class Header extends Component {
             <i class="fas fa-store"> BuyIt</i>
           </Link>
         </div>
-        <div className="searchBar">
+        <form className="searchBar">
           <input placeholder="O que você está buscando?" />
-        </div>
+        </form>
         <div className="login">
           <i class="far fa-user-circle" />
           <span>Faça seu login</span>
