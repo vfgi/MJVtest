@@ -1,9 +1,22 @@
-projeto: Mjv-Test
+###MJV Test
+** Contém as seguintes funcionalidades:
 
-Descrição: Teste de desenvolvimento front end para a empresa msj, um e-commerce com algums funções básicas para demonstrar a capacidade de desenvolvimento.
+ - Lista de Produtos(Vitrine)
+ - Layout responsivo
+ - Menu de categorias
+ - Detalhe de produto
 
-Instalação: use o comando "npm install" para instalar as dependências.
+## Passos para começar
+Clonando o Repositório
+git clone https://github.com/vfgi/MJVtest.git
 
-Uso: use o comando "npm start" para iniciar o projeto.
+Instalando as Dependências
+npm install
 
-Credits: Vitor Camargo Fernandes.
+Inicializando o Servidor
+npm start
+
+## DEMO
+
+Demo Hospedada no Heroku
+https://mjv-teste.herokuapp.com/
