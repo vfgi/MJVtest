@@ -1,4 +1,4 @@
-###MJV Test
+###BuyIt store
 ** Contém as seguintes funcionalidades:
 
  - Lista de Produtos(Vitrine)
