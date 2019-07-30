@@ -15,8 +15,3 @@ npm install
 
 Inicializando o Servidor
 npm start
-
-## DEMO
-
-Demo Hospedada no Heroku
-https://mjv-teste.herokuapp.com/
